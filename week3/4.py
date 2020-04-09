@@ -28,7 +28,7 @@ class Matrix():
     
     def __add__(self, mtrx):
         if self.getdim() != mtrx.getdim():
-            print('Недопустимая операция')
+            print('Operation impossible')
             return None
         else:
             resmtrx = Matrix(self.n, self.m)
@@ -40,7 +40,7 @@ class Matrix():
     def __mul__(self, mtrx):
         muln, mulm = mtrx.getdim()
         if self.n != mulm:
-            print('Недопустимая операция')
+            print('Operation impossible')
             return None
         else:
             matr_t = mtrx.transpose()
@@ -56,7 +56,7 @@ class Vector(Matrix):
         
     def __mul__(self, vctr):
         if self.getdim() != vctr.getdim():
-            print('Недопустимая операция')
+            print('Operation impossible')
             return None
         else:
             for x in range(self.n):
@@ -68,25 +68,25 @@ class Vector(Matrix):
         return math.sqrt(res)
 
 v1 = Vector(5)
-print("Вектор v1:")
+print("Vector v1:")
 print(v1)
 
 v2 = Vector(5)
-print("Вектор v2:")
+print("Vector v2:")
 print(v2)
 
 v3 = v1 + v2
-print("Вектор v3 (сумма векторов v1 и v2):")
+print("Vector v3 (addition of vectors v1 and v2):")
 print(v3)
 
 v4 = Vector(3)
-print("Сложение вектров разных размерностей. Ошибка!")
+print("Addition of different dimension vectors. Error.")
 v5 = v1 + v4
 
 
-print("Произведение векторов v1 и v2: ")
+print("Multiplication of vectors v1 and v2: ")
 v6 = v1 * v2
 print(v6)
 
-print("Евклидова норма вектора v1: ")
+print("Euclidean norm of vector v1: ")
 print(v1.norm())
